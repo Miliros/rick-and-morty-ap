@@ -13,7 +13,6 @@ import NavBar from "./components/Nav/Nav";
 import Home from "./pages/Home/Home";
 import Create from "./pages/Create/Create";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
