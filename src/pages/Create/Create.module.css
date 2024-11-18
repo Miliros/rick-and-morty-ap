@@ -1,0 +1,80 @@
+.cntnCreate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  height: 80vh;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 15px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.formTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.486);
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.error {
+  font-size: 12px;
+  color: red;
+  margin: 0px;
+}
+.inputField {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selectField {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.fileInput {
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.submitButton {
+  background-color: rgba(73, 211, 170, 0.836);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .cntnCreate {
+    padding-top: 0px;
+  }
+}

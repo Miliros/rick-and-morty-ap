@@ -1,0 +1,121 @@
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.characterList {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.characterListEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characterCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.characterCard:hover {
+  transform: scale(1.05);
+}
+
+.characterImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+}
+
+.characterCard h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.characterCard p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+.paginationButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.logoutButtonContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.logoutButton {
+  background-color: rgba(73, 211, 170, 0.836);
+  color: black;
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid rgba(73, 211, 170, 0.836);
+  font-size: 12px;
+}
+.logoutButton:hover {
+  border: 1px solid black;
+}
+.paginationButtons button {
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 16px;
+  border-radius: 2px;
+  min-width: 80px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.459);
+  color: rgb(8, 8, 8);
+  font-size: 12px;
+  font-weight: 400;
+  border: 1px solid rgb(138, 136, 134);
+  border-radius: 50px;
+  margin-left: 4px;
+}
+
+.paginationButtons button:hover {
+  background-color: rgba(73, 211, 170, 0.836);
+}
+
+.paginationButtons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.divError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: red;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .characterList {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .characterList {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
