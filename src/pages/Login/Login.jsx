@@ -12,7 +12,6 @@ export default function Login({ login }) {
   const [errors, setErrors] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Efecto que verifica si el formulario es valido
   useEffect(() => {
     setIsFormValid(
       !errors.username &&
@@ -26,7 +25,6 @@ export default function Login({ login }) {
     const { name, value } = event.target;
     setUserData((prevData) => ({ ...prevData, [name]: value }));
 
-    // Validamos el campo mientras se escribe
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: validateInput(name, value),
@@ -41,7 +39,6 @@ export default function Login({ login }) {
       const isAuthenticated = true;
 
       if (isAuthenticated) {
-        // Guardamos en localStorage
         localStorage.setItem("isAuthenticated", true);
         localStorage.setItem("username", userData.username);
 
