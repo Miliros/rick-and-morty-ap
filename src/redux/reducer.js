@@ -27,4 +27,4 @@ const charactersReducer = (state = initialState, action) => {
   }
 };
 
-export default charactersReducer; // Exporta por defecto
+export default charactersReducer;

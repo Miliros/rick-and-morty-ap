@@ -82,7 +82,6 @@
   display: block;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .form {
     padding: 20px;
