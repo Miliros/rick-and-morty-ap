@@ -13,6 +13,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
 .characterListEmpty {
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
+  width: 100%;
 }
 
 .characterCard:hover {
@@ -48,16 +50,19 @@
   color: #777;
   margin-bottom: 10px;
 }
+
 .paginationButtons {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .logoutButtonContainer {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
+
 .logoutButton {
   background-color: rgba(73, 211, 170, 0.836);
   color: black;
@@ -66,9 +71,11 @@
   border: 1px solid rgba(73, 211, 170, 0.836);
   font-size: 12px;
 }
+
 .logoutButton:hover {
   border: 1px solid black;
 }
+
 .paginationButtons button {
   text-align: center;
   cursor: pointer;
@@ -93,6 +100,7 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
 .divError {
   display: flex;
   justify-content: center;
