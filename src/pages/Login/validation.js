@@ -2,7 +2,7 @@ export function validateInput(name, value) {
   let error = "";
 
   if (name === "username") {
-    if (!value) {
+    if (!value || value === "") {
       error = "Username (email) is required.";
     } else if (
       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
@@ -12,12 +12,13 @@ export function validateInput(name, value) {
   }
 
   if (name === "password") {
-    // Validación de contraseña alfanumérica
-    if (!value) {
+    if (!value || value === "") {
       error = "Password is required.";
-    } else if (!/^[a-zA-Z0-9]+$/.test(value)) {
-      error = "Password must be alphanumeric (letters and numbers only).";
+    } else if (!/(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])/.test(value)) {
+      error =
+        "Password must contain at least one number and one special character.";
     }
   }
+
   return error;
 }

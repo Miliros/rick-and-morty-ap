@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Login.module.css";
 import { validateInput } from "./validation";
 import logo from "../../assets/rick-logoo.jpg";
@@ -10,12 +10,23 @@ export default function Login({ login }) {
   });
 
   const [errors, setErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // Efecto que verifica si el formulario es valido
+  useEffect(() => {
+    setIsFormValid(
+      !errors.username &&
+        !errors.password &&
+        userData.username &&
+        userData.password
+    );
+  }, [errors, userData]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserData((prevData) => ({ ...prevData, [name]: value }));
 
-    // valido el campo
+    // Validamos el campo mientras se escribe
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: validateInput(name, value),
@@ -25,13 +36,12 @@ export default function Login({ login }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // reviso si hay errores antes de enviar los datos
     if (!errors.username && !errors.password) {
-      // Simulo autenticación
+      // Simulo auth
       const isAuthenticated = true;
 
       if (isAuthenticated) {
-        // Guardar en localStorage
+        // Guardamos en localStorage
         localStorage.setItem("isAuthenticated", true);
         localStorage.setItem("username", userData.username);
 
@@ -58,10 +68,8 @@ export default function Login({ login }) {
               className={styles.input}
               autoComplete="off"
             />
-            {errors.username ? (
+            {errors.username && (
               <p className={styles.error}>{errors.username}</p>
-            ) : (
-              ""
             )}
           </div>
 
@@ -76,15 +84,13 @@ export default function Login({ login }) {
               className={styles.input}
               autoComplete="off"
             />
-            {errors.password ? (
+            {errors.password && (
               <p className={styles.error}>{errors.password}</p>
-            ) : (
-              ""
             )}
           </div>
         </div>
 
-        <button className={styles.button} type="submit">
+        <button className={styles.button} type="submit" disabled={!isFormValid}>
           LOGIN
         </button>
       </form>

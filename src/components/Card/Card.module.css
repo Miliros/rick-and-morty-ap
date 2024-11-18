@@ -40,7 +40,10 @@
   color: white;
   font-size: 18px;
   font-weight: 100;
-  max-width: 13vw;
+  max-width: 20vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cardProps {

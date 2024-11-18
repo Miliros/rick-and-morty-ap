@@ -39,6 +39,8 @@
   border-radius: 6px;
   padding: 10px;
   font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
 }
 .inpu:focus {
   outline: none;
@@ -62,7 +64,9 @@
 .button:hover {
   background-color: #07593f;
 }
-
+.button:disabled {
+  background-color: rgb(145, 137, 137);
+}
 .error {
   font-size: 12px;
   color: red;
